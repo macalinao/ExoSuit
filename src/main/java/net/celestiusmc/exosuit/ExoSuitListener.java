@@ -32,7 +32,7 @@ public class ExoSuitListener implements Listener {
         if ((event.getTo().getY() > event.getFrom().getY())
                 && player.hasPermission("exosuit.helmet")
                 && event.getPlayer().getInventory().getBoots().getType().equals(Material.DIAMOND_BOOTS)) {
-            double factor = 4.0;
+            double factor = 8.0;
 
             if (!jumping.contains(player) && (factor != 0.0D)) {
                 Vector newDirection = player.getVelocity();
