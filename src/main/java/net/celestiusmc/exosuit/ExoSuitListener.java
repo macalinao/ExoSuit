@@ -15,6 +15,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
 /**
@@ -31,9 +32,11 @@ public class ExoSuitListener implements Listener {
             jumping.remove(player);
         }
 
+        ItemStack boots = event.getPlayer().getInventory().getBoots();
         if ((event.getTo().getY() > event.getFrom().getY())
                 && player.hasPermission("exosuit.helmet")
-                && event.getPlayer().getInventory().getBoots().getType().equals(Material.DIAMOND_BOOTS)) {
+                && boots != null
+                && boots.getType().equals(Material.DIAMOND_BOOTS)) {
             double factor = 8.0;
 
             if (!jumping.contains(player) && (factor != 0.0D)) {
@@ -67,24 +70,30 @@ public class ExoSuitListener implements Listener {
         Player player = (Player) entity;
 
         //Helmet check
+        ItemStack helmet = player.getInventory().getHelmet();
         if (player.hasPermission("exosuit.helmet")
                 && event.getCause().equals(EntityDamageEvent.DamageCause.DROWNING)
-                && player.getInventory().getHelmet().getType().equals(Material.DIAMOND_HELMET)) {
+                && helmet != null
+                && helmet.getType().equals(Material.DIAMOND_HELMET)) {
             event.setDamage(0);
         }
 
         //Chestplate check
+        ItemStack chestplate = player.getInventory().getChestplate();
         if (player.hasPermission("exosuit.chestplate")
                 && (event.getCause().equals(EntityDamageEvent.DamageCause.FIRE)
                 || event.getCause().equals(EntityDamageEvent.DamageCause.FIRE_TICK))
-                && player.getInventory().getChestplate().getType().equals(Material.DIAMOND_CHESTPLATE)) {
+                && chestplate != null
+                && chestplate.getType().equals(Material.DIAMOND_CHESTPLATE)) {
             event.setDamage(0);
         }
 
         //Leggings check
+        ItemStack leggings = player.getInventory().getLeggings();
         if (player.hasPermission("exosuit.leggings")
                 && event.getCause().equals(EntityDamageEvent.DamageCause.FALL)
-                && player.getInventory().getLeggings().getType().equals(Material.DIAMOND_LEGGINGS)) {
+                && leggings != null
+                && leggings.getType().equals(Material.DIAMOND_LEGGINGS)) {
             event.setDamage(0);
         }
 
