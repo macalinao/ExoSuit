@@ -6,14 +6,22 @@ version: ${release.number}
 main: net.celestiusmc.exosuit.ExoSuit
 
 permissions:
-  exosuit.head:
-    description: Exosuit head piece.
+  exosuit.suit:
+    description: Exosuit usage.
+    children:
+      exosuit.helmet: true
+      exosuit.chestplate: true
+      exosuit.leggings: true
+      exosuit.boots: true
+  
+  exosuit.helmet:
+    description: Exosuit helmet.
     
-  exosuit.chest:
-    description: Exosuit chest piece.
+  exosuit.chestplate:
+    description: Exosuit chestplate.
     
-  exosuit.legs:
-    description: Exosuit legs piece.
+  exosuit.leggings:
+    description: Exosuit leggings.
     
   exosuit.boots:
-    description: Exosuit boots piece.
+    description: Exosuit boots.
