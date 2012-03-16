@@ -1,0 +1,19 @@
+name: ${project.name}
+description: ${project.description}
+author: AlbireoX
+version: ${release.number}
+
+main: net.celestiusmc.exosuit.ExoSuit
+
+permissions:
+  exosuit.head:
+    description: Exosuit head piece.
+    
+  exosuit.chest:
+    description: Exosuit chest piece.
+    
+  exosuit.legs:
+    description: Exosuit legs piece.
+    
+  exosuit.boots:
+    description: Exosuit boots piece.

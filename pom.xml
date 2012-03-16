@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.celestiusmc</groupId>
-    <artifactId>ExoSuit</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>exosuit</artifactId>
+    <version>dev-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>ExoSuit</name>
