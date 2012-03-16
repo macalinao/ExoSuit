@@ -40,7 +40,7 @@ public class ExoSuitListener implements Listener {
             double factor = 8.0;
 
             if (!jumping.contains(player) && (factor != 0.0D)) {
-                Vector newDirection = player.getVelocity();
+                Vector newDirection = player.getVelocity().normalize();
                 newDirection.multiply(-factor);
                 player.setVelocity(newDirection);
 
