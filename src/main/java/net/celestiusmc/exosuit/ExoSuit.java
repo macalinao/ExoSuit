@@ -5,6 +5,7 @@
 package net.celestiusmc.exosuit;
 
 import java.util.logging.Level;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -19,6 +20,7 @@ public class ExoSuit extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Bukkit.getPluginManager().registerEvents(new ExoSuitListener(), this);
         getLogger().log(Level.INFO, "Plugin enabled.");
     }
     
